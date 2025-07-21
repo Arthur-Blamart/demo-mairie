@@ -241,9 +241,46 @@ th {
 @media (max-width: 768px) {
   body {
     font-size: var(--font-size-sm);
+    overflow-x: hidden;
   }
   
   h1 { font-size: var(--font-size-2xl); }
   h2 { font-size: var(--font-size-xl); }
   h3 { font-size: var(--font-size-lg); }
+  
+  /* Améliorer les cibles tactiles pour mobile */
+  button, 
+  input[type="button"], 
+  input[type="submit"],
+  .btn,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Éviter le zoom sur les champs de saisie */
+  input, textarea, select {
+    font-size: 16px;
+  }
+}
+
+/* Styles pour les très petits écrans */
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+  
+  h1 { font-size: var(--font-size-xl); }
+  h2 { font-size: var(--font-size-lg); }
+  h3 { font-size: var(--font-size-base); }
+}
+
+/* Scroll fluide */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Supprimer le highlight bleu sur mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
 }
